@@ -229,11 +229,11 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'my_app',
+            'username' => 'root',
+            'password' => '',
+            'database' => 'test_app_db',
             'encoding' => 'utf8',
-            'timezone' => 'UTC',
+            'timezone' => '+09:00',
             'flags' => [],
             'cacheMetadata' => true,
             'log' => false,
