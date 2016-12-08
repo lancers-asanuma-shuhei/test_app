@@ -9,18 +9,18 @@
   {
     public function add()
     {
-      $comments = $this->Comments->newEntity();
-      if ($this->request->is('post')) {
-        $comment = $this->Comments->patchEntity($comment, $this->request->data);
-        if ($this->Comments->save($post)) {
-          $this->Flash->success('返信の投稿成功!');
-          return $this->redirect(['controller'=>'Posts', 'action'=>'view', $comment->post_id]);
-        } else {
-          // error
-          $this->Flash->error('返信の投稿失敗!');
-        }
-      }
-      $this->set(compact('comment'));
+      // $comment = $this->Comments->newEntity();
+      // if ($this->request->is('post')) {
+      //   $comment = $this->Comments->patchEntity($comment, $this->request->data);
+      //   if ($this->Comments->save($post)) {
+      //     $this->Flash->success('返信成功!');
+      //     return $this->redirect(['controller'=>'Posts', 'action'=>'view', $comment->post_id]);
+      //   } else {
+      //     // error
+      //     $this->Flash->error('返信失敗!');
+      //   }
+      // }
+      // $this->set(compact('comment'));
     }
 
   public function delete($id = null)
