@@ -12,11 +12,11 @@ class CommentsTable extends Table
     $this->belongsTo('Posts');
   }
 
-  public function validationDefault(validator $validator)
-  {
-    $validator
-      ->notEmpty('body')
-      ->requirePresence('body');
-    return $validator;
-  }
+  // public function validationDefault(validator $validator)
+  // {
+  //   $validator
+  //     ->notEmpty('body')
+  //     ->requirePresence('body');
+  //   return $validator;
+  // }
 }
