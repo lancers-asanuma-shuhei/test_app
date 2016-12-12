@@ -19,7 +19,9 @@
     public function view($id=null)
     {
       // $post = $this->Posts->get($id);
-      $post = $this->Posts->get($id, ['contain' => 'Comments']);
+      $post = $this->Posts->get($id, [
+        'contain' => 'Comments'
+      ]);
       $this->set(compact('post'));
     }
 
