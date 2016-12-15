@@ -1,12 +1,5 @@
-<?= $this->Form->create(); ?>
-
- <fieldset>
- <legend><?= __('login') ?></legend>
- <?php
-    echo $this->Form->input('email');
-    echo $this->Form->input('password');
- ?>
- </fieldset>
- <?= $this->Form->button(__('Submit')) ?>
- <?= $this->Form->end() ?>
- 
+<?= $this->Form->create() ?>
+<?= $this->Form->input('email') ?>
+<?= $this->Form->input('password') ?>
+<?= $this->Form->button('Login') ?>
+<?= $this->Form->end() ?>
