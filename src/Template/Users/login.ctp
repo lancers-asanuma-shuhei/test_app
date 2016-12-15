@@ -1,6 +1,7 @@
 <?= $this->Form->create(); ?>
+
  <fieldset>
- <legend><?= __('Login User') ?></legend>
+ <legend><?= __('login') ?></legend>
  <?php
     echo $this->Form->input('email');
     echo $this->Form->input('password');
