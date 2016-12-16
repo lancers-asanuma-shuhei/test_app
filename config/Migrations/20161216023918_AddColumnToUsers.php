@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class AddUsernameToUsers extends AbstractMigration
+class AddColumnToUsers extends AbstractMigration
 {
     /**
      * Change Method.
@@ -13,9 +13,12 @@ class AddUsernameToUsers extends AbstractMigration
     public function change()
     {
         $table = $this->table('users');
-        $table->addColumn('username', 'string', [
+        $table->addColumn('created', 'datetime', [
             'default' => null,
-            'limit' => 255,
+            'null' => false,
+        ]);
+        $table->addColumn('modified', 'datetime', [
+            'default' => null,
             'null' => false,
         ]);
         $table->update();

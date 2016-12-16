@@ -13,9 +13,12 @@ class AddColumnToPosts extends AbstractMigration
     public function change()
     {
         $table = $this->table('posts');
-        $table->addColumn('user_id', 'integer', [
+        $table->addColumn('created', 'datetime', [
             'default' => null,
-            'limit' => 11,
+            'null' => false,
+        ]);
+        $table->addColumn('modified', 'datetime', [
+            'default' => null,
             'null' => false,
         ]);
         $table->update();

@@ -1,4 +1,4 @@
-<h1>asanuma Twitter</h1>
+<h1>asanuma 闇発散部屋</h1>
 
 <div>
   <?= $this->Html->link('新規作成', ['action'=>'add']); ?>
@@ -28,4 +28,5 @@
 
     </li>
   <?php endforeach; ?>
+
 </ul>

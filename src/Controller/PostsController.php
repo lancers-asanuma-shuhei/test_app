@@ -9,17 +9,13 @@ class PostsController extends AppController
 {
   public function index()
   {
-    debug($this->Session->read('Auth'));
-    if ($this->Auth->user()) {
-      echo "aaa";
-    } else {
-      echo "bbb";
-    }
+    // debug($this->Session->read('Auth'));
     $posts = $this->Posts->find('all')
               ->order(['id' => 'desc']);
               // ->limit(1);
     // $this->set('posts', $posts);
     $this->set(compact('posts'));
+    debug($this);
   }
 
   public function view($id=null)

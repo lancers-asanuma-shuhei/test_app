@@ -13,7 +13,8 @@ class RemoveColumnFromPosts extends AbstractMigration
     public function change()
     {
         $table = $this->table('posts');
-        $table->removeColumn('post_id');
+        $table->removeColumn('created');
+        $table->removeColumn('modified');
         $table->update();
     }
 }

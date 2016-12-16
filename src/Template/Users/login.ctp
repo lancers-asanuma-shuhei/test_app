@@ -1,5 +1,11 @@
+<div class="users form">
+<?= $this->Flash->render('auth') ?>
 <?= $this->Form->create() ?>
-<?= $this->Form->input('email') ?>
-<?= $this->Form->input('password') ?>
-<?= $this->Form->button('Login') ?>
+    <fieldset>
+        <legend><?= __('あなたは浅沼秀平ですか') ?></legend>
+        <?= $this->Form->input('username') ?>
+        <?= $this->Form->input('password') ?>
+    </fieldset>
+<?= $this->Form->button(__('そうです')); ?>
 <?= $this->Form->end() ?>
+</div>
