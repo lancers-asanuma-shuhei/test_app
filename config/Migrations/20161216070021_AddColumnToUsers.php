@@ -13,12 +13,9 @@ class AddColumnToUsers extends AbstractMigration
     public function change()
     {
         $table = $this->table('users');
-        $table->addColumn('created', 'datetime', [
+        $table->addColumn('email', 'string', [
             'default' => null,
-            'null' => false,
-        ]);
-        $table->addColumn('modified', 'datetime', [
-            'default' => null,
+            'limit' => 255,
             'null' => false,
         ]);
         $table->update();
