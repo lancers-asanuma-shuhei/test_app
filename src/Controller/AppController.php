@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Application Controller
@@ -40,11 +41,43 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-
+        $this->Session = $this->request->session();
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->Session = $this->request->session();
     }
+        $this->loadComponent('Auth', [
+          'authenticate' => [
+            'Form' => [
+              'userModel' => 'Users',
+              'fields' => [
+                'username' => 'email',
+                'password' => 'password'
+              ]
+            ]
+          ],
+          'authError' => 'Did you really think you are allowed to see that?',
+          'loginAction' => [
+            'controller' => 'Users',
+            'action' => 'login'
+
+            // 'plugin' => 'User'
+          ],
+          'loginRedirect' => [
+             'controller' => 'Posts',
+             'action' => 'index'
+           ],
+           'logoutRedirect' => [ // ログアウト後に遷移するアクションを指定
+             'controller' => 'Users',
+             'action' => 'login'
+           ],
+          'storage'=>'Session'
+        ]);
+        // $this->Auth->config('authenticate', [
+        //   AuthComponent::ALL => ['userModel' => 'Users'],
+        //   'Form'
+        // ]);
+}
 
     /**
      * Before render callback.
