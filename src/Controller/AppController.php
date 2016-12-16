@@ -20,13 +20,18 @@ class AppController extends Controller
             'logoutRedirect' => [
                 'controller' => 'Users',
                 'action' => 'login',
+            ],
+            'authenticate' => [
+            'Form' => [
+                'fields' => ['username' => 'email']
             ]
+        ]
         ]);
     }
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['view']);
+        // $this->Auth->allow(['view']);
     }
     //...
 }
