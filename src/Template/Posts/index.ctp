@@ -9,6 +9,8 @@
     <li>
       <!-- htmlヘルパー -->
       <!-- <?= $this->Html->link($post->body, ['controller'=>'Posts', 'action'=>'view', $post->id]); ?> -->
+      <?= $this->Html->link($post->title, ['action'=>'view', $post->id]); ?>
+      <br>
       <?= $this->Html->link($post->body, ['action'=>'view', $post->id]); ?>
       <?= $this->Html->link('[編集する]', ['action'=>'edit', $post->id]); ?>
       <?=
@@ -18,7 +20,7 @@
           ['confirm'=>'削除しますか？', 'class'=>'fs12']
         );
       ?>
-
+<hr>
       <!-- urlヘルパー -->
       <!-- <a href="<?= $this->Url->build(['action'=>'view', $post->id]); ?>">
         <?= h($post->body); ?>
