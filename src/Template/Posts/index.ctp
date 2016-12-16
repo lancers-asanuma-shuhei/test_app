@@ -2,6 +2,7 @@
 
 <div class="login" style="float: right;">
   <?= h($login_status); ?>
+  <?= $this->Html->link('ログアウトする', ['controller'=>'Users', 'action'=>'logout']); ?>
 </div>
 
 <div>
