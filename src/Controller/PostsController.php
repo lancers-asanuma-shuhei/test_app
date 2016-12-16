@@ -13,9 +13,14 @@ class PostsController extends AppController
     $posts = $this->Posts->find('all')
               ->order(['id' => 'desc']);
               // ->limit(1);
-    // $this->set('posts', $posts);
     $this->set(compact('posts'));
-    debug($this);
+
+    if ($this->Auth->user()) {
+      $na = $this->Auth->user('username');
+      $this->set('login_status', "こんにちは　${na}　さん");
+    } else {
+      $this->set('login_status', "ログインしてません");
+    }
   }
 
   public function view($id=null)

@@ -1,5 +1,9 @@
 <h1>asanuma 闇発散部屋</h1>
 
+<div class="login" style="float: right;">
+  <?= h($login_status); ?>
+</div>
+
 <div>
   <?= $this->Html->link('新規作成', ['action'=>'add']); ?>
 </div>
